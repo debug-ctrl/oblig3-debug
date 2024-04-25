@@ -1,12 +1,12 @@
 function getbillet() {
-    let valid = true;
-
     let film = $("#film").val();
     let antall = $("#antall").val();
     let fornavn = $("#fornavn").val();
     let etternavn = $("#etternavn").val();
     let tlfnr = $("#tlfnr").val();
-    let Epost = $("#Epost").val();
+    let epost = $("#epost").val();
+
+    let valid = true;
 
     // validering for filmer
     if (!film) {
@@ -50,8 +50,8 @@ function getbillet() {
     }
 
     // validering av e-post med regex
-    const epost = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!epost.test(Epost)) {
+    const Epost = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!Epost.test(epost)) {
         $("#eposterror").text("Skriv inn riktig epost");
         valid = false;
     } else {
@@ -65,7 +65,7 @@ function getbillet() {
             fornavn: fornavn,
             etternavn: etternavn,
             tlf: tlfnr,
-            Epost: Epost
+            epost: epost
         };
         $.post("/lagre",billet,function (){
             VisBilletter();
@@ -86,18 +86,17 @@ function slett(){
 }
 
 function billettregister(billetter) {
-    let ut = "<table><tr>" +
+    let ut = "<table class='table table-striped table-bordered'><tr>" +
         "<th> Film </th><th> Antall </th><th> Fornavn </th><th> Etternavn </th><th> Telefonnr</th><th> Epost </th>" +
         "</tr>";
     for(const billet of billetter){
         ut += "<tr>";
         ut += " <td> " + billet.film + " </td><td> " + billet.antall + " </td><td> " + billet.fornavn +
-            " </td><td> " + billet.etternavn + " </td><td> " + billet.tlf + " </td><td> " + billet.Epost + "</td>";
+            " </td><td> " + billet.etternavn + " </td><td> " + billet.tlf + " </td><td> " + billet.epost + "</td>";
         ut += "</tr>";
     }
     ut += "</table>";
     $("#VisBilletter").html(ut);
-
 }
 
 function nullstill() {
@@ -107,7 +106,7 @@ function nullstill() {
     $("#fornavn").val("");
     $("#etternavn").val("");
     $("#tlfnr").val("");
-    $("#Epost").val("");
+    $("#epost").val("");
 }
 
 

@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bestilling av kinobiletter</title>
+    <title>Oblig 3</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script type="application/javascript" src="index.js"></script>
 
     <style>
         .error {
@@ -37,33 +37,33 @@
         </div>
 
         <div class="form-group">
-            <label for="fornavn">Fornavn:</label>
+            <label for="fornavn">Fornavn</label>
             <input type="text" id="fornavn" oninput class="form-control">
             <span id="fornavnerror" class="error"></span>
         </div>
 
         <div class="form-group">
-            <label for="etternavn">Etternavn:</label>
+            <label for="etternavn">Etternavn</label>
             <input type="text" id="etternavn" class="form-control">
             <span id="etternavnerror" class="error"></span>
         </div>
 
         <div class="form-group">
-            <label for="tlfnr">Telefonnr:</label>
+            <label for="tlfnr">Telefonnr</label>
             <input type="text" id="tlfnr" class="form-control">
             <span id="tlfnrerror" class="error"></span>
         </div>
 
         <div class="form-group">
-            <label for="Epost">Epost:</label>
-            <input type="text" id="Epost" class="form-control">
+            <label for="epost">Epost</label>
+            <input type="text" id="epost" class="form-control">
             <span id="eposterror" class="error"></span>
         </div>
 
         <button type="button" onclick="getbillet()" class="btn btn-primary">Kjøp billett</button>
     </form>
     <h2>Alle billetter</h2>
-    <div style="margin:30px" id="VisBilletter"></div>
+    <div id="VisBilletter"></div>
     <p></p>
     <button class="btn btn-danger" onclick="slett()">Slett alle biletter</button>
 </div>
