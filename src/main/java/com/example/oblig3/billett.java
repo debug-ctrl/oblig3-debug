@@ -5,16 +5,16 @@ public class billett {
  private int antall;
  private String fornavn;
  private String etternavn;
- private String tlf; // Changed to String
- private String Epost;
+ private int tlf;
+ private String epost;
 
- public billett(String film, int antall, String fornavn, String etternavn, String tlf, String Epost) {
+ public billett(String film, int antall, String fornavn, String etternavn, int tlf, String epost) {
   this.film = film;
   this.antall = antall;
   this.fornavn = fornavn;
   this.etternavn = etternavn;
   this.tlf = tlf;
-  this.Epost = Epost;
+  epost = epost;
  }
 
  public String getFilm() {
@@ -49,19 +49,19 @@ public class billett {
   this.etternavn = etternavn;
  }
 
- public String getTlf() {
+ public int getTlf() {
   return tlf;
  }
 
- public void setTlf(String tlf) {
+ public void setTlf(int tlf) {
   this.tlf = tlf;
  }
 
  public String getEpost() {
-  return Epost;
+  return epost;
  }
 
  public void setEpost(String Epost) {
-  this.Epost = Epost;
+  this.epost = Epost;
  }
 }
