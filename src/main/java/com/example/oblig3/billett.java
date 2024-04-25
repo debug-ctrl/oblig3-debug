@@ -14,7 +14,7 @@ public class billett {
   this.fornavn = fornavn;
   this.etternavn = etternavn;
   this.tlf = tlf;
-  epost = epost;
+  this.epost = epost;
  }
 
  public String getFilm() {
