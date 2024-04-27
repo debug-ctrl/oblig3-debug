@@ -3,7 +3,7 @@ function getbillet() {
     let antall = $("#antall").val();
     let fornavn = $("#fornavn").val();
     let etternavn = $("#etternavn").val();
-    let tlfnr = $("#tlfnr").val();
+    let tlf = $("#tlf").val();
     let epost = $("#epost").val();
 
     let valid = true;
@@ -41,8 +41,8 @@ function getbillet() {
     }
 
     // validering av telefonnummer med regex
-    const tlf = /^[0-9]{8,12}$/;
-    if (!tlf.test(tlfnr)) {
+    const tlfnr = /^[0-9]{8,12}$/;
+    if (!tlfnr.test(tlf)) {
         $("#tlfnrerror").text("Skriv inn riktig telefonnr!");
         valid = false;
     } else {
@@ -64,16 +64,16 @@ function getbillet() {
             antall: antall,
             fornavn: fornavn,
             etternavn: etternavn,
-            tlf: tlfnr,
+            tlf: tlf,
             epost: epost
         };
-        $.post("/lagre",billet,function (){
-            VisBilletter();
+        $.post("/lagre",billet, function (){
+            VisBiletter();
         });
         nullstill();
     }
 }
-function VisBilletter(){
+function VisBiletter(){
     $.post("/hentAlleBilletter",function (data){
         billettregister(data);
     });
@@ -105,7 +105,7 @@ function nullstill() {
     $("#antall").val("");
     $("#fornavn").val("");
     $("#etternavn").val("");
-    $("#tlfnr").val("");
+    $("#tlf").val("");
     $("#epost").val("");
 }
 

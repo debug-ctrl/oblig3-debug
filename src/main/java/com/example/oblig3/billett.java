@@ -8,6 +8,10 @@ public class billett {
  private int tlf;
  private String epost;
 
+ public billett(){
+
+ }
+
  public billett(String film, int antall, String fornavn, String etternavn, int tlf, String epost) {
   this.film = film;
   this.antall = antall;

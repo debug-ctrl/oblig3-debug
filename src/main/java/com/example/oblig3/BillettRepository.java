@@ -15,7 +15,7 @@ public class BillettRepository {
     private JdbcTemplate db;
 
     public void lagreBillett(billett innBilletter){
-        String sql = "INSERT INTO billett (film,antall,fornavn,etternavn,tlf,Epost) VALUES (?,?,?,?,?,?)";
+        String sql = "INSERT INTO billett (film,antall,fornavn,etternavn,tlf,epost) VALUES (?,?,?,?,?,?)";
         db.update(sql,innBilletter.getFilm(),innBilletter.getAntall(),innBilletter.getFornavn(),innBilletter.getEtternavn(),innBilletter.getTlf(),innBilletter.getEpost());
     }
 
